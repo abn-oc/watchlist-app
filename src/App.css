@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+a{
+    text-decoration: none;
+}
+
 body{
     background-color: #111;
     font-family: "Inter";

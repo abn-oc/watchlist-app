@@ -1,21 +1,17 @@
 import { useState } from 'react'
 import SidebarButton from './components/SidebarButton'
-import WatchListTab from './components/WatchListTab';
-import SearchTab from './components/SearchTab'
-import { LuPopcorn } from "react-icons/lu";
-import { IoSearchSharp } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoIosClose } from "react-icons/io";
 import './App.css'
+import { Link } from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom'
+import SearchTab from './components/SearchTab'
+import WatchListTab from './components/WatchListTab'
+import CompletedListTab from './components/CompletedListTab'
 
 function App() {
 
-  let [tab,setTab] = useState(0)
-  let content;
-  if(tab == 0) content = <SearchTab/>
-  else if(tab == 1) content = <WatchListTab/>
-
-
+  //functions and event listener for responsiveness
   function opensidebar() {
     document.getElementById("closeicon").style.display = "block"
     document.getElementById("sbbg").style.display = "block"
@@ -26,7 +22,6 @@ function App() {
     document.getElementById("sbbg").style.display = "none"
     document.getElementById("sidebar").classList.remove("sbopen")
   }
-
   window.addEventListener('resize', () => {
     if(window.innerWidth > 900) {
       closesidebar()
@@ -39,11 +34,16 @@ function App() {
       <RxHamburgerMenu id='hamburgericon' onClick={opensidebar}/>
       <div id='sidebar' className='sidebar'>
         <IoIosClose id='closeicon' onClick={closesidebar}/>
-        <SidebarButton text={"Search"} Icon={IoSearchSharp} tab={tab} setTab={setTab} />
-        <SidebarButton text={"WatchList"} Icon={LuPopcorn} tab={tab} setTab={setTab} />
+        <Link to="/"> <SidebarButton text={"Search"} /> </Link>
+        <Link to="my-watchlist"> <SidebarButton text={"My WatchList"} /> </Link>
+        <Link to="my-completedlist"> <SidebarButton text={"My CompletedList"} /> </Link>
       </div>
       <div id='sbbg' onClick={closesidebar}></div>
-      {content}
+      <Routes>
+        <Route path='/' element={<SearchTab/>} />
+        <Route path='my-watchlist' element={<WatchListTab/>} />
+        <Route path='my-completedlist' element={<CompletedListTab/>} />
+      </Routes>
     </div>
     </>
   )

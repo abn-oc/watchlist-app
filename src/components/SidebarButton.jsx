@@ -1,16 +1,16 @@
 import { useState } from 'react'
+import { IoSearchSharp } from "react-icons/io5";
+import { LuPopcorn } from "react-icons/lu";
+import { MdDone } from "react-icons/md";
 
-export default function SidebarButton ({text, Icon, tab, setTab}) {
+export default function SidebarButton ({text}) {
 
-    let x;
-    if(text == "Search") x = 0
-    else if (text == "WatchList") x = 1
-
-    let classtxt;
-    if(x == tab) classtxt = "sbButton activebtn";
-    else classtxt = "sbButton"
+    let icon
+    text == "Search"? icon = <IoSearchSharp className='ico'/>:0;
+    text == "My WatchList"?icon = <LuPopcorn className='ico'/>:0;
+    text == "My CompletedList"?icon = <MdDone className='ico'/>:0;
 
     return (
-        <button className={classtxt} onClick={() => {setTab(x)}}><span>{text}</span> <Icon className='ico'/></button>
+        <button className="sbButton"><span>{text}</span>{icon}</button>
     )
 }

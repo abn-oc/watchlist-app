@@ -3,11 +3,13 @@ import SidebarButton from './components/SidebarButton'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoIosClose } from "react-icons/io";
 import './App.css'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom'
 import SearchTab from './components/SearchTab'
 import WatchListTab from './components/WatchListTab'
 import CompletedListTab from './components/CompletedListTab'
+import Details from './components/Details'
 
 function App() {
 
@@ -34,15 +36,19 @@ function App() {
       <RxHamburgerMenu id='hamburgericon' onClick={opensidebar}/>
       <div id='sidebar' className='sidebar'>
         <IoIosClose id='closeicon' onClick={closesidebar}/>
-        <Link to="/"> <SidebarButton text={"Search"} /> </Link>
-        <Link to="my-watchlist"> <SidebarButton text={"My WatchList"} /> </Link>
-        <Link to="my-completedlist"> <SidebarButton text={"My CompletedList"} /> </Link>
+        <NavLink to='/search/' className="sbButton"><SidebarButton text="Search"/></NavLink>
+        <NavLink to='/my-watchlist' className="sbButton"><SidebarButton text="My WatchList"/></NavLink>
+        <NavLink to='/my-completedlist' className="sbButton"><SidebarButton text="My CompletedList"/></NavLink>
       </div>
       <div id='sbbg' onClick={closesidebar}></div>
       <Routes>
-        <Route path='/' element={<SearchTab/>} />
-        <Route path='my-watchlist' element={<WatchListTab/>} />
-        <Route path='my-completedlist' element={<CompletedListTab/>} />
+        <Route path='/' element={<Navigate to={'/search/'}/>}/>
+        <Route path='/search/' element={<SearchTab/>}></Route>
+        <Route path='/search/:value' element={<SearchTab/>}></Route>
+        <Route path='/my-watchlist' element={<WatchListTab/>} />
+        <Route path='/my-completedlist' element={<CompletedListTab/>} />
+        {/* <Route path='/search/:movie/details/:title' element={<Details/>}></Route> */}
+        <Route path='/:a/:b/details/:title' element={<Details/>}></Route>
       </Routes>
     </div>
     </>

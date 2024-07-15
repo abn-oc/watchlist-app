@@ -11,6 +11,6 @@ export default function SidebarButton ({text}) {
     text == "My CompletedList"?icon = <MdDone className='ico'/>:0;
 
     return (
-        <button className="sbButton"><span>{text}</span>{icon}</button>
+        <button><span>{text}</span>{icon}</button>
     )
 }

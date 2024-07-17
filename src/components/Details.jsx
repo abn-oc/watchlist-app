@@ -13,17 +13,28 @@ export default function Details() {
 
     let [movie, setMovie] = useState({Title: "", Plot: "", Poster: ""})
 
+    let [content, setContent] = useState(<div id="loader"><MoonLoader color="white"/></div>)
+
 
     useEffect(() => {
       (async () => {
         const mov = await (await fetch(url)).json()
         setMovie(mov)
+        setContent(<MovieDetails movie={mov}/>)
         console.log(mov)
       })()
     }, [title])    
 
     return (
       <>
+      {content}
+      </>
+    )
+}
+
+function MovieDetails({movie}) {
+  return (
+    <>
         <img src={movie.Poster} id="bgimg"/>
         <div className='maind'>
         <div className="row">
@@ -49,8 +60,5 @@ export default function Details() {
 
         </div>
       </>
-    )
+  )
 }
-
-
-{/* <MoonLoader color="white" id="loader"/>  */}

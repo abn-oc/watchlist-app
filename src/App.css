@@ -225,14 +225,17 @@ body{
     text-align: center;
     margin-top: 2px;
 }
-
 #loader{
-    margin: auto;
+    height: 90vh;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #bgimg{
     position: absolute;
     left: 20%;
-    top: -40%;
+    top: -50%;
     width: 80%;
     z-index: 0;
     filter: grayscale() blur(4px);
@@ -248,7 +251,6 @@ body{
     margin-right: 1.2%;
     margin-top: 1.19%;
     color: white;
-    /* border: 1px solid red; */
 }
 .maind *{
     z-index: 1;

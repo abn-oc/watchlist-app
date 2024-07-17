@@ -265,7 +265,8 @@ body{
     padding: 1%;
 }
 .maind .maininfo{
-    height: 50%;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 4%;
@@ -291,6 +292,40 @@ body{
     bottom: 8px;
     left: 5px;
 }
+.detailsbutton{
+    border: none;
+    background-color: #403F90;
+    color: white;
+    border-radius: 5px;
+    height: 8vh;
+    width: 50%;
+    font-size: 1.2rem;
+    margin-top: 2%;
+    min-width: 200px;
+}
+.detailsbutton:hover{
+    background-color: #3b3a85;
+}
+.detailsbutton:active{
+    background-color: #2b2a64;
+}
+.detailsbutton2{
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    height: 8vh;
+    width: 50%;
+    font-size: 1.2rem;
+    margin-top: 2%;
+    min-width: 200px;
+}
+.detailsbutton2:hover{
+    background-color: #ffffff0a;
+}
+.detailsbutton2:active{
+    background-color: #111;
+}
 
 @keyframes slideanim {
     0%{
@@ -312,17 +347,21 @@ body{
     .main h1{
         margin: auto;
     }
-    .main h2{
-        margin-left: 5%;
-    }
     .w{
         width: 0%;
     }
     #hamburgericon{
         display: block;
     }
+    .searchbar{
+        margin-top: 15%;
+        margin-left: 2.5%;
+    }
     .searchbar #searchicon{
         transform: translateX(-3em);
+    }
+    #loader{
+        width: 100%;
     }
     .result{
         width: 29%;

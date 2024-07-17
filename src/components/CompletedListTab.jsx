@@ -5,7 +5,7 @@ export default function CompletedListTab() {
         <div className='main'>
 
           <div className="pagename">
-            <h2>\\CompletedList Tab</h2>
+            {/* <h2>\\CompletedList Tab</h2> */}
           </div>
 
         </div>

@@ -39,7 +39,7 @@ export default function SearchTab() {
     return (
         <div className='main'>
 
-          <h2>\\Search Tab</h2>
+          {/* <h2>\\Search Tab</h2> */}
 
           <SearchBar value={value} setValue={setValue} onsub={search}/>
 

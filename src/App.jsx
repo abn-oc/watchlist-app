@@ -34,7 +34,7 @@ function App() {
     <>
     <div className='container'>
       <RxHamburgerMenu id='hamburgericon' onClick={opensidebar}/>
-      <div style={{width: '25%'}}>
+      <div className='w'>
       <div id='sidebar' className='sidebar'>
         <IoIosClose id='closeicon' onClick={closesidebar}/>
         <NavLink to='/search/' className="sbButton"><SidebarButton text="Search"/></NavLink>

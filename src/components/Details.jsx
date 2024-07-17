@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { MoonLoader } from "react-spinners"
+import { IoMdTime } from "react-icons/io";
+import { MdLanguage } from "react-icons/md";
+import { FiAward } from "react-icons/fi";
 
 export default function Details() {
 
@@ -8,7 +11,7 @@ export default function Details() {
     const enctitle = encodeURIComponent(title)
     const url = `http://www.omdbapi.com/?t=${enctitle}&plot=full&apikey=553957c`
 
-    let [movie, setMovie] = useState({Title: "Loading...", Plot: "Loading..."})
+    let [movie, setMovie] = useState({Title: "", Plot: "", Poster: ""})
 
 
     useEffect(() => {
@@ -26,7 +29,8 @@ export default function Details() {
         <div className="row">
         <img src={movie.Poster} alt={movie.Title + "Poster"} />
           <div className="maininfo">
-            <h2>{movie.Title}</h2>
+            <h2 style={{color: 'white'}}>{movie.Title}</h2>
+            <p>{movie.Type}</p>
             <p>{movie.Genre}</p>
             <p>{movie.Released}</p>
           </div>
@@ -35,6 +39,12 @@ export default function Details() {
         <div className="plotbox">
           <h3>Plot Summary: </h3>
           <p>{movie.Plot}</p>
+        </div>
+
+        <div className="mtadta">
+        <IoMdTime size={30}/><span>{movie.Runtime}</span><br />
+        <MdLanguage size={30}/><span>{movie.Language}</span><br />
+        <FiAward size={30}/><span>{movie.Awards}</span><br />
         </div>
 
         </div>

@@ -5,7 +5,7 @@ export default function WatchListTab() {
         <div className='main'>
 
           <div className="pagename">
-            <h2>\\WatchList Tab</h2>
+            {/* <h2>\\WatchList Tab</h2> */}
           </div>
 
         </div>

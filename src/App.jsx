@@ -34,11 +34,13 @@ function App() {
     <>
     <div className='container'>
       <RxHamburgerMenu id='hamburgericon' onClick={opensidebar}/>
+      <div style={{width: '25%'}}>
       <div id='sidebar' className='sidebar'>
         <IoIosClose id='closeicon' onClick={closesidebar}/>
         <NavLink to='/search/' className="sbButton"><SidebarButton text="Search"/></NavLink>
         <NavLink to='/my-watchlist' className="sbButton"><SidebarButton text="My WatchList"/></NavLink>
         <NavLink to='/my-completedlist' className="sbButton"><SidebarButton text="My CompletedList"/></NavLink>
+      </div>
       </div>
       <div id='sbbg' onClick={closesidebar}></div>
       <Routes>

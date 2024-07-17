@@ -10,7 +10,7 @@ export default function SearchTab() {
   const navigate = useNavigate()
 
   const searched = useParams()
-  console.log(searched.value)
+  console.log(searched)
 
   function search() {
     navigate(`/search/${value}`)

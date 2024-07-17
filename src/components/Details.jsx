@@ -1,33 +1,46 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { MoonLoader } from "react-spinners"
 
 export default function Details() {
 
     const title = useParams().title
-    console.log(title)
     const enctitle = encodeURIComponent(title)
-    const url = `http://www.omdbapi.com/?t=${enctitle}&apikey=553957c`
+    const url = `http://www.omdbapi.com/?t=${enctitle}&plot=full&apikey=553957c`
 
-    let [tempcontent, setT] = useState("\\Details Page for loading...")
+    let [movie, setMovie] = useState({Title: "Loading...", Plot: "Loading..."})
 
-    let [movie, setMovie] = useState(null)
 
     useEffect(() => {
       (async () => {
         const mov = await (await fetch(url)).json()
         setMovie(mov)
         console.log(mov)
-        setT(`\\Details Page for ${mov.Title}`) 
       })()
-    }, [url])    
+    }, [title])    
 
     return (
-        <div className='main'>
-
-          <div className="pagename">
-            <h2>{tempcontent}</h2>
+      <>
+        <img src={movie.Poster} id="bgimg"/>
+        <div className='maind'>
+        <div className="row">
+        <img src={movie.Poster} alt={movie.Title + "Poster"} />
+          <div className="maininfo">
+            <h2>{movie.Title}</h2>
+            <p>{movie.Genre}</p>
+            <p>{movie.Released}</p>
           </div>
+        </div>
+
+        <div className="plotbox">
+          <h3>Plot Summary: </h3>
+          <p>{movie.Plot}</p>
+        </div>
 
         </div>
+      </>
     )
 }
+
+
+{/* <MoonLoader color="white" id="loader"/>  */}

@@ -3,6 +3,7 @@ import DetailsButton2 from './DetailsButton2'
 import { Link } from "react-router-dom"
 import { MdDelete } from "react-icons/md";
 import { delfromCL } from './functions';
+import Review from './Review'
 
 export default function ClCard({ movie, dtcl }) {
 
@@ -13,7 +14,7 @@ export default function ClCard({ movie, dtcl }) {
                 <h4>{movie.Title}</h4>
                 <p>{movie.Plot}</p>
                 <div className='btns'>
-                <div className='btncont'><DetailsButton3 text="Review"/></div>
+                <div className='btncont'><DetailsButton3 text="Review" func={() => {}}/><Review/></div>
                 <Link to={`details/${movie.Title}`}><div className='btncont'><DetailsButton2 text="Go to Page"/></div></Link>
                 <button className='deletebutton'><MdDelete size={41} onClick={() => {dtcl(movie);delfromCL(movie)}}/></button>
                 </div>

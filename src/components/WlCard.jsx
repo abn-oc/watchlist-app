@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import DetailsButton from './DetailsButton'
 import DetailsButton2 from './DetailsButton2'
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import { addtoCl, getCl, delfromWL } from './functions'
 import { MdDelete } from "react-icons/md";
 

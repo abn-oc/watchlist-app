@@ -3,7 +3,6 @@ import DetailsButton2 from './DetailsButton2'
 import { Link } from "react-router-dom"
 import { MdDelete } from "react-icons/md";
 import { delfromCL } from './functions';
-import Review from './Review'
 
 export default function ClCard({ movie, dtcl }) {
 

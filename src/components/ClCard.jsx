@@ -14,7 +14,7 @@ export default function ClCard({ movie, dtcl }) {
                 <h4>{movie.Title}</h4>
                 <p>{movie.Plot}</p>
                 <div className='btns'>
-                <div className='btncont'><DetailsButton3 text="Review" func={() => {}}/><Review/></div>
+                <div className='btncont'><DetailsButton3 text="Review" func={() => {}}/></div>
                 <Link to={`details/${movie.Title}`}><div className='btncont'><DetailsButton2 text="Go to Page"/></div></Link>
                 <button className='deletebutton'><MdDelete size={41} onClick={() => {dtcl(movie);delfromCL(movie)}}/></button>
                 </div>

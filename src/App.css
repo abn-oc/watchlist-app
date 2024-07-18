@@ -339,10 +339,6 @@ body{
     font-size: 1.25rem;
     margin-top: 2%;
     min-width: 200px;
-    position: relative;
-    z-index: 1;
-    transition-duration: 300ms;
-    clip-path: inset(0 0 0 0);
 }
 .detailsbutton3:hover{
     background-color: #eeae00;
@@ -365,23 +361,6 @@ body{
 .disabled:active{
     background-color: lightgray;
     color: #222;
-}
-.review{
-    z-index: 0;
-    position: absolute;
-    bottom: 0%;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    box-shadow:inset 0px 0px 0px 1px #ffbd03;
-    color: white;
-    font-weight: bolder;
-    border-radius: 5px;
-    font-size: 1.25rem;
-    min-width: 200px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 8vh;
 }
 
 .showslist{

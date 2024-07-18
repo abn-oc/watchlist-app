@@ -326,6 +326,65 @@ body{
 .detailsbutton2:active{
     background-color: #111;
 }
+.detailsbutton3{
+    border: none;
+    background-color: #ffbd03;
+    color: #111;
+    border-radius: 5px;
+    height: 8vh;
+    width: 50%;
+    font-size: 1.25rem;
+    margin-top: 2%;
+    min-width: 200px;
+}
+.detailsbutton3:hover{
+    background-color: #eeae00;
+}
+.detailsbutton3:active{
+    background-color: #c79200;
+}
+
+.showslist{
+    display: flex;
+    flex-direction: column;
+}
+.wlcard{
+    display: flex;
+    flex-direction: row;
+    /* background-color: #222; */
+    background-image: linear-gradient(to bottom, #222, #292929);
+    box-shadow: 0px 4px 8px #111;
+    color: white;
+    height: 50%;
+    padding: 0.5%;
+    animation: slideanim 250ms;
+}
+.wlcard .info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5%;
+    margin-left: 2%;
+    height: 90%;
+}
+.wlcard .info p{
+    margin-top: 2%;
+    width: 80%;
+    color: #d1d1d1;
+    font-size: 0.9rem;
+}
+.wlcard .btns{
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    /* border: 1px solid red; */
+}
+.wlcard .btncont{
+    margin-right: 2%;
+}
+.wlcard .btncont *{
+    font-size: 1.0rem;
+    font-weight: 600;
+}
 
 @keyframes slideanim {
     0%{

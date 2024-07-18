@@ -19,8 +19,11 @@ export default function Details() {
 
     function MovieDetails({movie}) {
 
+      //useEffect to load previous list in a variable -> for disabling buttons
+
       function addtoWl() {
         console.log(movie.Title)
+        //add to the list in localstorage
       }
 
       return (
@@ -37,7 +40,7 @@ export default function Details() {
                 <p>{movie.Released}</p>
                 <p>IMDB Rating: {movie.Ratings[0].Value}</p>
                 <DetailsButton text="Add to Watch List" func={addtoWl}/>
-                <DetailsButton2 text="Add to Completed List"/>
+                <DetailsButton2 text="Add to Completed List" />
               </div>
             </div>
     
@@ -64,7 +67,7 @@ export default function Details() {
         setContent(<MovieDetails movie={mov} />)
         console.log(mov)
       })()
-    }, [title])    
+    }, [])    
 
     return (
       <>

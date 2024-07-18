@@ -1,4 +1,4 @@
-export default function DetailsButton({text, func}) {
+export default function DetailsButton({ text, func}) {
 
 
 

@@ -25,22 +25,19 @@ export default function Details() {
 
       let [watchlist, setWatchlist] = useState([])
       let [completedlist, setCompletedlist] = useState([])
+
       useEffect(() => {
         let wl = getWl();
         if(wl !== null) {
           setWatchlist(wl)
-          setinwl(watchlist.some(i => i.imdbID == movie.imdbID))
+          setinwl(wl.some(i => i.imdbID == movie.imdbID))
         }
-
         let cl = getCl();
         if(cl !== null) {
           setCompletedlist(cl)
-          setincl(completedlist.some(i => i.imdbID == movie.imdbID))
+          setincl(cl.some(i => i.imdbID == movie.imdbID))
         }
-      }, [watchlist, completedlist])
-
-      
-      
+      }, [])
 
       return (
         <>
@@ -55,8 +52,8 @@ export default function Details() {
                 <p>{movie.Genre}</p>
                 <p>{movie.Released}</p>
                 <p>IMDB Rating: {movie.Ratings[0].Value}</p>
-                <DetailsButton text="Add to Watch List" func={() => addtoWl(movie)} disabled={inwl}/>
-                <DetailsButton2 text="Add to Completed List" func={() => addtoCl(movie)} disabled={incl}/>
+                <DetailsButton text="Add to Watch List" func={() => {addtoWl(movie);setinwl(true)}} disabled={inwl}/>
+                <DetailsButton2 text="Add to Completed List" func={() => {addtoCl(movie);setincl(true)}} disabled={incl}/>
               </div>
             </div>
     

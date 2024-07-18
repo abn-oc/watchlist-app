@@ -2,13 +2,9 @@ import DetailsButton3 from './DetailsButton3'
 import DetailsButton2 from './DetailsButton2'
 import { Link } from "react-router-dom"
 import { MdDelete } from "react-icons/md";
+import { delfromCL } from './functions';
 
-export default function ClCard({ movie }) {
-
-    //now make functions for deleting from cl or wl that take a movie as an arguement and delete
-    //it from the list, make those functions in functions file
-    //make that function work on clicking on the dustbin
-    //add dustbin in WLCard
+export default function ClCard({ movie, dtcl }) {
 
     return (
         <div className="wlcard">
@@ -19,7 +15,7 @@ export default function ClCard({ movie }) {
                 <div className='btns'>
                 <div className='btncont'><DetailsButton3 text="Review"/></div>
                 <Link to={`details/${movie.Title}`}><div className='btncont'><DetailsButton2 text="Go to Page"/></div></Link>
-                <button className='deletebutton'><MdDelete size={41} /></button>
+                <button className='deletebutton'><MdDelete size={41} onClick={() => {dtcl(movie);delfromCL(movie)}}/></button>
                 </div>
             </div>
         </div>

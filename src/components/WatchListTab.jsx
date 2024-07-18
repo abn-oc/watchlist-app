@@ -5,7 +5,7 @@ import WlCard from "./WlCard"
 export default function WatchListTab() {
 
   let [watchlist, setWatchlist] = useState([])
-
+  
   useEffect(() => {
     let wl = getWl();
     if(wl !== null) {
@@ -14,9 +14,12 @@ export default function WatchListTab() {
     }
   }, []);
 
+  function deletefromTWL(movie) {
+    setWatchlist(watchlist.filter(i => i.imdbID !== movie.imdbID))
+  }
 
   let wlmarkup = watchlist.map(movie => 
-    <WlCard movie={movie}/>
+    <WlCard movie={movie} key={movie.imdbID} dtwl={deletefromTWL}/>
   )
 
     return (

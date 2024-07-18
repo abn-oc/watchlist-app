@@ -14,9 +14,12 @@ export default function CompletedListTab() {
     }
   }, []);
 
+  function deletefromTCL(movie) {
+    setCompletedlist(completedlist.filter(i => i.imdbID !== movie.imdbID))
+  }
 
   let clmarkup = completedlist.map(movie => 
-    <ClCard movie={movie}/>
+    <ClCard movie={movie} key={movie.imdbID} dtcl={deletefromTCL}/>
   )
 
     return (

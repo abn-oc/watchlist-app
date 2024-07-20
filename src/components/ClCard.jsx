@@ -8,14 +8,16 @@ import { useEffect, useState } from 'react';
 import { modalOpen } from "./functions";
 
 export default function ClCard({ movie, dtcl, sm }) {
-
-    let [rtext, setRtext] = useState("Review");
+    const [rtext, setRtext] = useState("Review");
     useEffect(() => {
         let rating = getRev(movie)
-        if(rating !== null) {
+        if(rating !== null && rating !== "") {
             setRtext(`${rating}/10`)
         }
-    }, [])
+        else {
+            setRtext("Review")
+        }
+    })
 
     return (
         <div className="wlcard">

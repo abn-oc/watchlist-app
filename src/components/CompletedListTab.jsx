@@ -9,14 +9,12 @@ export default function CompletedListTab() {
   const [currmovie, setCurrMovie] = useState(null)
   function sm(movie) {
     setCurrMovie(movie)
-    console.log("rating " + movie.Title)
   }
 
   useEffect(() => {
     let cl = getCl();
     if(cl !== null) {
       setCompletedlist(cl)
-      console.log(cl)
     }
   }, []);
 
@@ -30,11 +28,11 @@ export default function CompletedListTab() {
 
     return (
         <div className='main'>
-          <div className='blur' id="blur" onClick={modalClose}></div>
+          <div className='blur' id="blur" onClick={() => {modalClose;setCurrMovie(null)}}></div>
           <div className="showslist">
             {clmarkup}
           </div>
-          <RatingModal movie={currmovie}/>
+          <RatingModal movie={currmovie} sm={setCurrMovie}/>
         </div>
     )
 }

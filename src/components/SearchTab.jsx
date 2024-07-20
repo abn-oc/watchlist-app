@@ -5,8 +5,8 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 
 export default function SearchTab() {
 
-  let [value,setValue] = useState("")
-  let [movieslist,setMoviesList] = useState([])
+  const [value,setValue] = useState("")
+  const [movieslist,setMoviesList] = useState([])
   const navigate = useNavigate()
 
   const searched = useParams()

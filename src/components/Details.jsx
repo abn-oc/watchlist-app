@@ -14,17 +14,17 @@ export default function Details() {
     const enctitle = encodeURIComponent(title)
     const url = `http://www.omdbapi.com/?t=${enctitle}&plot=full&apikey=553957c`
 
-    let [movie, setMovie] = useState({Title: "", Plot: "", Poster: ""})
+    const [movie, setMovie] = useState({Title: "", Plot: "", Poster: ""})
 
-    let [content, setContent] = useState(<div id="loader"><MoonLoader color="white"/></div>)
+    const [content, setContent] = useState(<div id="loader"><MoonLoader color="white"/></div>)
 
     function MovieDetails({movie}) {
 
-      let [inwl, setinwl] = useState()
-      let [incl, setincl] = useState()
+      const [inwl, setinwl] = useState()
+      const [incl, setincl] = useState()
 
-      let [watchlist, setWatchlist] = useState([])
-      let [completedlist, setCompletedlist] = useState([])
+      const [watchlist, setWatchlist] = useState([])
+      const [completedlist, setCompletedlist] = useState([])
 
       useEffect(() => {
         let wl = getWl();

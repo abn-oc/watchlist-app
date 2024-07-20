@@ -6,7 +6,7 @@ import { MdDelete } from "react-icons/md";
 
 export default function WlCard({ movie, dtwl }) {
 
-    let [incl, setincl] = useState()
+    const [incl, setincl] = useState()
 
     useEffect(() => {
       let cl = getCl();

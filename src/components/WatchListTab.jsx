@@ -4,7 +4,7 @@ import WlCard from "./WlCard"
 
 export default function WatchListTab() {
 
-  let [watchlist, setWatchlist] = useState([])
+  const [watchlist, setWatchlist] = useState([])
   
   useEffect(() => {
     let wl = getWl();

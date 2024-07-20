@@ -1,10 +1,10 @@
 export default function DetailsButton2({ text , func, disabled}) {
 
-    let cn = "detailsbutton"
+    let cn = "detailsbutton2"
     let fn = func
 
     if(disabled) {
-        cn = "detailsbutton disabled"
+        cn = "detailsbutton2 disabled"
         fn = () => {}
         text = "In Completed list"
     }

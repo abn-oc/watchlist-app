@@ -54,4 +54,33 @@ export function delfromCL(movie) {
     let completedlist = getCl()
     let newCl = completedlist.filter(i => i.imdbID !== movie.imdbID)
     setCl(newCl)
+    localStorage.setItem(movie.imdbID, null)
+}
+
+export function setRev(movie ,rev) {
+    localStorage.setItem(movie.imdbID, JSON.stringify(rev))
+}
+
+export function getRev(movie) {
+    let x;
+    try {
+        x = JSON.parse(localStorage.getItem(movie.imdbID))
+    } catch(error) {
+        return null
+    } 
+    return x
+}
+
+export function modalOpen() {
+    document.getElementById("blur").style.display = "block"
+    document.getElementById("ratingmodal").style.top = "0%"
+    document.getElementById("ratingmodal").style.opacity = "1.0"
+    document.getElementById("ratingmodal").style.pointerEvents = "auto"
+}
+
+export function modalClose() {
+    document.getElementById("blur").style.display = "none"
+    document.getElementById("ratingmodal").style.top = "50%"
+    document.getElementById("ratingmodal").style.opacity = "0.0"
+    document.getElementById("ratingmodal").style.pointerEvents = "none"
 }

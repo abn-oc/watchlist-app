@@ -51,6 +51,7 @@ function App() {
         <Route path='/my-completedlist' element={<CompletedListTab/>} />
         {/* <Route path='/search/:movie/details/:title' element={<Details/>}></Route> */}
         <Route path='/:a/:b/details/:title' element={<Details/>}></Route>
+        <Route path='/:a/details/:title' element={<Details/>}></Route>
       </Routes>
     </div>
     </>

@@ -1,6 +1,3 @@
-import CardButton from './CardButton'
-
-
 export default function MediaCard({movie}) {
 
     return (

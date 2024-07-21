@@ -42,7 +42,7 @@ export default function Details() {
       return (
         <>
             <img src={movie.Poster} id="bgimg"/>
-            <div className='maind'>
+            <div className='main'>
             <div className="row">
             <img src={movie.Poster} alt={movie.Title + "Poster"} />
               <div className="maininfo">
@@ -67,7 +67,6 @@ export default function Details() {
             <MdLanguage size={30}/><span>{movie.Language}</span><br />
             <FiAward size={30}/><span>{movie.Awards}</span><br />
             </div>
-    
             </div>
           </>
       )

@@ -538,6 +538,9 @@ body{
         margin-block: auto;
         /* border: 1px solid red; */
     }
+    .wlinfo h4{
+        height: 2lh;
+    }
     .wlinfo p{
         display: none;
     }
@@ -561,7 +564,7 @@ body{
         margin-top: auto;
         margin-bottom: 0%;
         margin-right: 2%;
-        top: 1.55vh;
+        top: 0.0vh;
     }
     #ratingmodal{
         left: 5%;

@@ -509,12 +509,13 @@ body{
 @media (max-width: 500px) {
     #sbbg{
         position: fixed;
+        top: 0; left: 0;
         cursor: pointer;
         display: none;
         height: 100vh;
         width: 100%;
         z-index: 2;
-        backdrop-filter: blur(1px);
+        backdrop-filter: blur(2px);
     }
     #hamburgericon{
         display: block;

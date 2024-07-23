@@ -1,5 +1,6 @@
 import DetailsButton3 from './DetailsButton3'
 import DetailsButton2 from './DetailsButton2'
+import DetailsButton4 from './DetailsButton4';
 import { Link } from "react-router-dom"
 import { MdDelete } from "react-icons/md";
 import { delfromCL } from './functions';
@@ -27,7 +28,7 @@ export default function ClCard({ movie, dtcl, sm }) {
                 <p>{movie.Plot}</p>
                 <div className='wlbtns'>
                 <div className='wlbtn'><DetailsButton3 text={rtext} func={() => {modalOpen();sm(movie)}}/></div>
-                <Link className='wlbtn' to={`details/${movie.Title}`}><DetailsButton2 text="Go to Page"/></Link>
+                <Link className='wlbtn' to={`details/${movie.Title}`}><DetailsButton4/></Link>
                 <button id='delbtn'><MdDelete size={41} onClick={() => {dtcl(movie);delfromCL(movie)}}/></button>
                 </div>
             </div>

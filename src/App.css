@@ -2,17 +2,20 @@
     padding: 0;
     margin: 0;
 }
-
 a{
     text-decoration: none;
 }
-
 body{
     background-color: #111;
     font-family: "Inter";
     color: white;
 }
 
+#loader{
+    position: absolute;
+    top: 45%;
+    left: 58%;
+}
 #hamburgericon{
     display: none;
 }
@@ -29,7 +32,6 @@ body{
     transition-timing-function: ease;
     z-index: 3;
 }
-
 .sbButton{
     background-color: #D9D9D9;
     color: #111;
@@ -99,11 +101,11 @@ body{
     top: 0%;
     left: 25%;
     width: 75%;
-    /* min-width: 630px; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .searchbar{
     margin-top: 5%;
     display: flex;
@@ -173,6 +175,337 @@ body{
     margin-top: 2px;
 }
 
+#bgimg{
+    position: absolute;
+    top: -25%; left: 25%;
+    width: 75%;
+    height: 160%;
+    object-fit: cover;
+    mask-image: linear-gradient(black, transparent 90%);
+    filter: blur(4px) grayscale();
+    opacity: 0.15;
+}
+.drow{
+    width: 90%;
+    margin-block: 5%;
+    display: flex;
+    flex-direction: row;
+}
+#dposter{
+    width: 30%;
+}
+.maininfo{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-inline: auto;
+}
+.maininfo h2{
+    margin-top: 5%;
+}
+.maininfo p{
+    margin-block: 2%;
+}
+.dbtns{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 5%;
+    height: 17vh;
+}
+.plotbox{
+    width: 90%;
+}
+.plotbox h3{
+    margin-bottom: 1%;
+    font-weight: 700;
+}
+.plotbox p{
+    line-height: 1.5rem;
+    color: #cecece;
+}
+.mtadta{
+    margin-top: 5%;
+    width: 90%;
+    font-weight: 700;
+}
+.mtadta span{
+    position: relative;
+    bottom: 1.25vh;
+    left: 0.5vw;
+}
+
+.showslist{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin-top: 2%;
+}
+.wlcard{
+    display: flex;
+    flex-direction: row;
+    /* outline: 1px solid red; */
+    background-image: linear-gradient(to bottom, #222, #292929);
+    height: 35vh;
+    padding: 1%;
+    margin-bottom: 1%;
+}
+#wlposter{
+    width: 15%;
+    /* border: 1px solid blue; */
+}
+.wlinfo{
+    width: 83%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid green; */
+}
+.wlinfo h4{
+    margin-block: 1%;
+    font-size: 1.4rem;
+}
+.wlinfo p{
+    height: 45%;
+    overflow: hidden;
+}
+.wlbtns{
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    margin-bottom: 2%;
+    /* border: 1px solid cyan; */
+}
+.wlbtn{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    width: 20vw;
+    margin-right: 2%;
+}
+#delbtn{
+    border: none;
+    /* border: 1px solid cyan; */
+    margin-left: auto;
+    background-color: transparent;
+    color: rgb(200, 0, 0);
+}
+#delbtn:hover{
+    color: rgb(180, 0, 0);
+}
+#delbtn:active{
+    color: rgb(160, 0, 0);
+}
+
+#blur{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px) brightness(50%);
+    z-index: 4;
+}
+#ratingmodal{
+    pointer-events: none;
+    position: fixed;
+    top: 0%; left: 30%;
+    width: 50vw; height: 45vh;
+    background-color: #222;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+    font-size: 2rem;
+    opacity: 0.0;
+    transition-duration: 250ms;
+}
+#ratingmodal p{
+    margin-top: 2%;
+    margin-bottom: auto;
+    width: 90%;
+    text-align: center;
+}
+.rminput{
+    width: 100%;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.rminput input{
+    font-size: 2rem;
+    width: 10%;
+    background-color: #2f2f2f;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.rminput input:focus{
+    outline: none;
+}
+.rmbtns{
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    margin-bottom: 2%;
+}
+.rmbtn{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    width: 20vw;
+    margin-right: 2%;
+}
+.rmbar{
+    background-color: #ffbd03;
+    color: #111;
+    width: 100%;
+    height: 10%;
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: row;
+}
+.rmbar span{
+    margin-left: 2%;
+}
+#rmclose{
+    height: 100%;
+    width: 5%;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.detailsbutton{
+    cursor: pointer;
+    border: none;
+    height: 7.5vh;
+    border-radius: 2vmin;
+    background-color: #403F90;
+    color: white;
+    font-size: 1.2rem;
+}
+.detailsbutton:hover{
+    background-color: #3b3a85;
+}
+.detailsbutton:active{
+    background-color: #2b2a64;
+}
+.detailsbutton2{
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    border-radius: 2vmin;
+    height: 7.5vh;
+    font-size: 1.2rem;
+}
+.detailsbutton2:hover{
+    background-color: #ffffff0a;
+}
+.detailsbutton2:active{
+    background-color: #111;
+}
+.detailsbutton3{
+    cursor: pointer;
+    border: none;
+    background-color: #ffbd03;
+    color: #111;
+    border-radius: 2vmin;
+    height: 7.5vh;
+    font-size: 1.25rem;
+}
+.detailsbutton3:hover{
+    background-color: #eeae00;
+}
+.detailsbutton3:active{
+    background-color: #c79200;
+}
+.disabled{
+    background-color: lightgray;
+    color: #222;
+}
+.disabled:hover{
+    background-color: lightgray;
+    color: #222;
+}
+.disabled:active{
+    background-color: lightgray;
+    color: #222;
+}
+
+@media (max-width: 1600px) {
+    #wlposter{
+        width: 18%;
+    }
+    .wlinfo{
+        width: 80%;
+    }
+}
+
+@media  (max-width: 1300px) {
+    #dposter{
+        width: 35%;
+    }
+    .maininfo{
+        width: 55%;
+    }
+    #wlposter{
+        width: 20%;
+    }
+    .wlinfo{
+        width: 78%;
+    }
+}
+
+@media  (max-width: 1000px) {
+    #dposter{
+        width: 40%;
+    }
+    .maininfo{
+        width: 50%;
+    }
+    .wlinfo h4{
+        font-size: 1.1rem;
+    }
+    #wlposter{
+        margin-left: 1%;
+        width: 25%;
+    }
+    .wlinfo{
+        width: 72%;
+        /* border: 1px solid red; */
+    }
+    .wlinfo p{
+        display: none;
+    }
+    .wlbtns{
+        /* border: 1px solid green; */
+        height: 100%;
+        flex-direction: column;
+    }
+    .wlbtn{
+        margin-top: 3%;
+        width: 95%;
+    }
+    #delbtn{
+        margin-top: auto;
+        margin-bottom: 0%;
+        margin-right: 2%;
+    }
+    #ratingmodal{
+        left: 10%;
+        width: 80vw; height: 45vh;
+    }
+    #ratingmodal p{
+        font-size: 1.5rem;
+    }
+}
+
 @media (max-width: 500px) {
     #sbbg{
         position: fixed;
@@ -194,9 +527,15 @@ body{
     #sidebar{
         left: -100%;
     }
+    #loader{
+        position: absolute;
+        top: 40%;
+        left: 40%;
+    }
     .main{
         left: 0%;
         width: 100%;
+        top: 10vh;
     }
     .searchbar{
         margin-top: 2%;
@@ -211,5 +550,55 @@ body{
     }
     .result{
         width: 46%;
+    }
+    #bgimg{
+        opacity: 0.0;
+    }
+    .drow{
+        flex-direction: column;
+    }
+    #dposter{
+        width: 80%;
+        margin-inline: auto;
+    }
+    .maininfo{
+        width: 100%;
+    }
+    .dbtns{
+        margin-top: 5%;
+    }
+    #wlposter{
+        width: 30%;
+    }
+    .wlinfo{
+        width: 65%;
+        /* border: 1px solid red; */
+    }
+    .wlinfo p{
+        display: none;
+    }
+    .wlbtns{
+        /* border: 1px solid green; */
+        height: 100%;
+        flex-direction: column;
+    }
+    .wlbtn{
+        margin-top: 5%;
+        width: 95%;
+        /* border: 1px solid green; */
+    }
+    .wlbtn *{
+        font-size: 1.05rem;
+    }
+    #delbtn{
+        margin-top: auto;
+        margin-bottom: 0%;
+        margin-right: 2%;
+    }
+    #ratingmodal p{
+        font-size: 1.25rem;
+    }
+    .rminput input{
+        width: 20%;
     }
 }

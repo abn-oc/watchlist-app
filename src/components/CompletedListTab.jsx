@@ -28,7 +28,7 @@ export default function CompletedListTab() {
 
     return (
         <div className='main'>
-          <div className='blur' id="blur" onClick={() => {modalClose;setCurrMovie(null)}}></div>
+          <div id="blur" onClick={() => {modalClose();setCurrMovie(null)}}></div>
           <div className="showslist">
             {clmarkup}
           </div>

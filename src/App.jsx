@@ -38,10 +38,10 @@ function App() {
         <Route path='/' element={<Navigate to={'/search/'}/>}/>
         <Route path='/search/' element={<SearchTab/>}></Route>
         <Route path='/search/:value' element={<SearchTab/>}></Route>
-        {/* <Route path='/my-watchlist' element={<WatchListTab/>} /> */}
-        {/* <Route path='/my-completedlist' element={<CompletedListTab/>} /> */}
+        <Route path='/my-watchlist' element={<WatchListTab/>} />
+        <Route path='/my-completedlist' element={<CompletedListTab/>} />
         <Route path='/:a/:b/details/:title' element={<Details/>}></Route>
-        {/* <Route path='/:a/details/:title' element={<Details/>}></Route> */}
+        <Route path='/:a/details/:title' element={<Details/>}></Route>
       </Routes>
     </>
   )

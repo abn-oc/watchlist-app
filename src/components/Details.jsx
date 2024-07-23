@@ -43,8 +43,8 @@ export default function Details() {
         <>
             <img src={movie.Poster} id="bgimg"/>
             <div className='main'>
-            <div className="row">
-            <img src={movie.Poster} alt={movie.Title + "Poster"} />
+            <div className="drow">
+            <img src={movie.Poster} alt={movie.Title + "Poster"} id="dposter"/>
               <div className="maininfo">
                 <h2 style={{color: 'white'}}>{movie.Title}</h2>
                 <p>{movie.Type}</p>
@@ -52,8 +52,10 @@ export default function Details() {
                 <p>{movie.Genre}</p>
                 <p>{movie.Released}</p>
                 <p>IMDB Rating: {movie.Ratings[0].Value}</p>
+                <div className="dbtns">
                 <DetailsButton text="Add to Watch List" func={() => {addtoWl(movie);setinwl(true)}} disabled={inwl}/>
                 <DetailsButton2 text="Add to Completed List" func={() => {addtoCl(movie);setincl(true)}} disabled={incl}/>
+                </div>
               </div>
             </div>
     

@@ -21,14 +21,14 @@ export default function ClCard({ movie, dtcl, sm }) {
 
     return (
         <div className="wlcard">
-            <div className='imgcont'><img src={movie.Poster} alt={movie.Title + " Poster"} /></div>
-            <div className="info">
+            <img src={movie.Poster} alt={movie.Title + " Poster"} id='wlposter'/>
+            <div className="wlinfo">
                 <h4>{movie.Title}</h4>
                 <p>{movie.Plot}</p>
-                <div className='btns'>
-                <div className='btncont'><DetailsButton3 text={rtext} func={() => {modalOpen();sm(movie)}}/></div>
-                <Link to={`details/${movie.Title}`}><div className='btncont'><DetailsButton2 text="Go to Page"/></div></Link>
-                <button className='deletebutton'><MdDelete size={41} onClick={() => {dtcl(movie);delfromCL(movie)}}/></button>
+                <div className='wlbtns'>
+                <div className='wlbtn'><DetailsButton3 text={rtext} func={() => {modalOpen();sm(movie)}}/></div>
+                <Link to={`details/${movie.Title}`}><div className='wlbtn'><DetailsButton2 text="Go to Page"/></div></Link>
+                <button id='delbtn'><MdDelete size={41} onClick={() => {dtcl(movie);delfromCL(movie)}}/></button>
                 </div>
             </div>
         </div>

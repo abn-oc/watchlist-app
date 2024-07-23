@@ -73,7 +73,7 @@ export function getRev(movie) {
 
 export function modalOpen() {
     document.getElementById("blur").style.display = "block"
-    document.getElementById("ratingmodal").style.top = "0%"
+    document.getElementById("ratingmodal").style.top = "20%"
     document.getElementById("ratingmodal").style.opacity = "1.0"
     document.getElementById("ratingmodal").style.pointerEvents = "auto"
 }

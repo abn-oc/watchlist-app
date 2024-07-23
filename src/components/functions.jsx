@@ -76,6 +76,7 @@ export function modalOpen() {
     document.getElementById("ratingmodal").style.top = "20%"
     document.getElementById("ratingmodal").style.opacity = "1.0"
     document.getElementById("ratingmodal").style.pointerEvents = "auto"
+    document.getElementById("ri").focus()
 }
 
 export function modalClose() {
@@ -83,4 +84,5 @@ export function modalClose() {
     document.getElementById("ratingmodal").style.top = "50%"
     document.getElementById("ratingmodal").style.opacity = "0.0"
     document.getElementById("ratingmodal").style.pointerEvents = "none"
+    document.getElementById("ri").blur()
 }

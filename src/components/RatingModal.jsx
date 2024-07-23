@@ -12,7 +12,6 @@ export default function RatingModal({ movie, sm }) {
     useEffect(() => {
         setErrormsg("")
         setValue("")
-        document.getElementById("ri").focus()
     }, [movie])
 
     let title = "";

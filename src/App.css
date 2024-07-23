@@ -16,6 +16,11 @@ body{
     top: 45%;
     left: 58%;
 }
+#sloader{
+    position: absolute;
+    top: 40vh;
+    left: 32vw;
+}
 #hamburgericon{
     display: none;
 }
@@ -126,7 +131,7 @@ body{
     cursor: pointer;
     position: relative;
     left: -9%;
-    width: 10%;
+    width: 20%;
     border-radius: 1vmin;
     background-color: rgb(230, 230, 230);
 }
@@ -199,6 +204,7 @@ body{
     flex-direction: column;
     width: 60%;
     margin-inline: auto;
+    color: #bcbcbc;
 }
 .maininfo h2{
     margin-top: 5%;
@@ -223,7 +229,7 @@ body{
 }
 .plotbox p{
     line-height: 1.5rem;
-    color: #cecece;
+    color: #bcbcbc;
 }
 .mtadta{
     margin-top: 5%;
@@ -397,18 +403,18 @@ body{
 }
 .detailsbutton2{
     cursor: pointer;
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
+    border: none;
+    background-color: lightgray;
+    color: #222;
     border-radius: 2vmin;
     height: 7.5vh;
     font-size: 1.2rem;
 }
 .detailsbutton2:hover{
-    background-color: #ffffff0a;
+    background-color: rgb(189, 189, 189);
 }
 .detailsbutton2:active{
-    background-color: #111;
+    background-color: rgb(142, 142, 142);
 }
 .detailsbutton3{
     cursor: pointer;
@@ -426,84 +432,15 @@ body{
     background-color: #c79200;
 }
 .disabled{
-    background-color: lightgray;
-    color: #222;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
 }
 .disabled:hover{
-    background-color: lightgray;
-    color: #222;
+    background-color: #ffffff0a;
 }
 .disabled:active{
-    background-color: lightgray;
-    color: #222;
-}
-
-@media (max-width: 1600px) {
-    #wlposter{
-        width: 18%;
-    }
-    .wlinfo{
-        width: 80%;
-    }
-}
-
-@media  (max-width: 1300px) {
-    #dposter{
-        width: 35%;
-    }
-    .maininfo{
-        width: 55%;
-    }
-    #wlposter{
-        width: 20%;
-    }
-    .wlinfo{
-        width: 78%;
-    }
-}
-
-@media  (max-width: 1000px) {
-    #dposter{
-        width: 40%;
-    }
-    .maininfo{
-        width: 50%;
-    }
-    .wlinfo h4{
-        font-size: 1.1rem;
-    }
-    #wlposter{
-        margin-left: 1%;
-        width: 25%;
-    }
-    .wlinfo{
-        width: 72%;
-        /* border: 1px solid red; */
-    }
-    .wlinfo p{
-        display: none;
-    }
-    .wlbtns{
-        /* border: 1px solid green; */
-        height: 100%;
-        flex-direction: column;
-    }
-    .wlbtn{
-        margin-top: 3%;
-        width: 95%;
-    }
-    #delbtn{
-        margin-top: auto;
-        margin-bottom: 0%;
-        margin-right: 2%;
-    }
-    #ratingmodal{
-        left: 10%;
-        width: 80vw; height: 45vh;
-    }
-    #ratingmodal p{
-        font-size: 1.5rem;
-    }
+    background-color: #111;
 }
 
 @media (max-width: 500px) {
@@ -526,6 +463,7 @@ body{
         cursor: pointer;
     }
     #sidebar{
+        width: 70%;
         left: -100%;
     }
     #loader{
@@ -537,13 +475,21 @@ body{
         left: 0%;
         width: 100%;
         top: 10vh;
+        /* outline: 1px solid green; */
     }
     .searchbar{
-        margin-top: 2%;
+        /* border: 1px solid red; */
         position: absolute;
+        top: -10vh;
         left: 13vw;
-        width: 87vw;
-        height: 10vh;
+        width: 85vw;
+        height: 7vh;
+    }
+    .searchbar input{
+        width: 100%;
+    }
+    .searchbar button{
+        left: -5%;
     }
     .medialist{
         position: absolute;
@@ -569,23 +515,31 @@ body{
         margin-top: 5%;
     }
     #wlposter{
-        width: 30%;
+        margin-block: auto;
+        margin-left: 2%;
+        width: 45%;
+        height: 90%;
     }
     .wlinfo{
-        width: 65%;
+        width: 50%;
+        height: 90%;
+        margin-block: auto;
         /* border: 1px solid red; */
     }
     .wlinfo p{
         display: none;
     }
     .wlbtns{
-        /* border: 1px solid green; */
+        /* border: 1px solid red; */
         height: 100%;
         flex-direction: column;
+        margin-top: 10%;
     }
     .wlbtn{
+        margin-inline: auto;
         margin-top: 5%;
-        width: 95%;
+        width: 90%;
+        height: 30%;
         /* border: 1px solid green; */
     }
     .wlbtn *{
@@ -596,10 +550,46 @@ body{
         margin-bottom: 0%;
         margin-right: 2%;
     }
+    #ratingmodal{
+        left: 5%;
+        width: 90%;
+    }
     #ratingmodal p{
-        font-size: 1.25rem;
+        margin-top: 10%;
+        /* border: 1px solid red; */
+        font-size: 1.3rem;
     }
     .rminput input{
         width: 20%;
+    }
+    .rmbtns{
+        width: 80vw;
+        /* border: 1px solid red; */
+        justify-content: space-around;
+    }
+    .rmbtn{
+        width: 40vw;
+    }
+    .rmbar span{
+        margin-top: 1.5%;
+    }
+    #rmclose{
+        /* border: 1px solid red; */
+        height: 100%;
+        width: 25%;
+        cursor: pointer;
+        margin-left: auto;
+        position: relative;
+        left: 7%;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .mtadta{
+        margin-bottom: 7%;
+    }
+    #sloader{
+        position: absolute;
+        top: 20vh;
+        left: 35vw;
     }
 }

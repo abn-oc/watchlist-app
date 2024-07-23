@@ -2,6 +2,7 @@ import SearchBar from './SearchBar'
 import MediaCard from './MediaCard'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { MoonLoader } from "react-spinners"
 
 export default function SearchTab() {
 
@@ -24,7 +25,7 @@ export default function SearchTab() {
         return;
       }
       let url = `https://www.omdbapi.com/?s=${searched.value}&apikey=553957c`
-      setMoviesList(<h1>Searching...</h1>)
+      setMoviesList(<div id="sloader"><MoonLoader color="white"/></div>)
       let searchList = (await (await fetch(url)).json()).Search
       if(!searchList) {
           setMoviesList(<h1>No Results Found</h1>)

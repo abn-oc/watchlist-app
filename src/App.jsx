@@ -29,9 +29,9 @@ function App() {
     <>
       <RxHamburgerMenu id='hamburgericon' onClick={opensidebar}/>
       <div id='sidebar'>
-        <NavLink to='/search/'><SidebarButton text="Search"/></NavLink>
-        <NavLink to='/my-watchlist'><SidebarButton text="My WatchList"/></NavLink>
-        <NavLink to='/my-completedlist' ><SidebarButton text="My CompletedList"/></NavLink>
+        <NavLink to='/search/'><SidebarButton text="Search" func={() => {if(window.innerWidth <= 500) closesidebar()}}/></NavLink>
+        <NavLink to='/my-watchlist'><SidebarButton text="My WatchList" func={() => {if(window.innerWidth <= 500) closesidebar()}}/></NavLink>
+        <NavLink to='/my-completedlist' ><SidebarButton text="My CompletedList" func={() => {if(window.innerWidth <= 500) closesidebar()}}/></NavLink>
       </div>
       <div id='sbbg' onClick={closesidebar}></div>
       <Routes>

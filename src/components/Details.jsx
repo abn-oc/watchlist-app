@@ -6,7 +6,7 @@ import { MdLanguage } from "react-icons/md";
 import { FiAward } from "react-icons/fi";
 import DetailsButton from "./DetailsButton"
 import DetailsButton2 from "./DetailsButton2"
-import {getWl, addtoWl, getCl, addtoCl} from './functions'
+import {getWl, addtoWl, getCl, addtoCl, delfromWL, delfromCL} from './functions'
 
 export default function Details() {
 
@@ -20,8 +20,8 @@ export default function Details() {
 
     function MovieDetails({movie}) {
 
-      const [inwl, setinwl] = useState()
-      const [incl, setincl] = useState()
+      const [inwl, setinwl] = useState(false)
+      const [incl, setincl] = useState(false)
 
       const [watchlist, setWatchlist] = useState([])
       const [completedlist, setCompletedlist] = useState([])
@@ -53,8 +53,8 @@ export default function Details() {
                 <p>{movie.Released}</p>
                 <p>IMDB Rating: {movie.Ratings[0].Value}</p>
                 <div className="dbtns">
-                <DetailsButton text="Add to Watch List" func={() => {addtoWl(movie);setinwl(true)}} disabled={inwl}/>
-                <DetailsButton2 text="Add to Completed List" func={() => {addtoCl(movie);setincl(true)}} disabled={incl}/>
+                <DetailsButton text="Add to Watch List" func={() => {if(inwl){delfromWL(movie);setinwl(false);}else{addtoWl(movie);setinwl(true);}}} disabled={inwl}/>
+                <DetailsButton2 text="Add to Completed List" func={() => {if(incl){delfromCL(movie);setincl(false);}else{addtoCl(movie);setincl(true);}}} disabled={incl}/>
                 </div>
               </div>
             </div>

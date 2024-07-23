@@ -14,7 +14,7 @@ export default function DetailsButton2({ text , func, disabled}) {
 
     return (
         <button className={cn} onClick={func}>
-            {text}  {ico}
+            {ico}  {text}
         </button>
     )
 }

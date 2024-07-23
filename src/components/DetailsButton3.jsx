@@ -5,7 +5,7 @@ export default function DetailsButton3({ text , func}) {
     return (
         <>
         <button className="detailsbutton3" onClick={func}>
-            {text}  <FaStar style={{position: 'relative',top: '0.2vh'}}/>
+            <FaStar style={{position: 'relative',top: '0.2vh'}}/>  {text}
         </button>
         </>
     )

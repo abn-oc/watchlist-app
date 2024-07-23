@@ -24,7 +24,7 @@ export default function ClCard({ movie, dtcl, sm }) {
         <div className="wlcard">
             <img src={movie.Poster} alt={movie.Title + " Poster"} id='wlposter'/>
             <div className="wlinfo">
-                <h4>{movie.Title}</h4>
+                <Link to={`details/${movie.Title}`}><h4>{movie.Title}</h4></Link>
                 <p>{movie.Plot}</p>
                 <div className='wlbtns'>
                 <div className='wlbtn'><DetailsButton3 text={rtext} func={() => {modalOpen();sm(movie)}}/></div>

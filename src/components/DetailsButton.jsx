@@ -11,7 +11,7 @@ export default function DetailsButton({ text, func, disabled }) {
 
     return (
         <button className={cn} onClick={func}>
-            {text}  <LuPopcorn style={{position: 'relative',top: '0.3vh'}}/>
+            <LuPopcorn style={{position: 'relative',top: '0.3vh'}}/>  {text}
         </button>
     )
 }

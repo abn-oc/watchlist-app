@@ -230,16 +230,19 @@ body{
 .plotbox p{
     line-height: 1.5rem;
     color: #bcbcbc;
+    text-align: justify;
 }
 .mtadta{
     margin-top: 5%;
     width: 90%;
     font-weight: 700;
+    color: #bcbcbc;
 }
 .mtadta span{
     position: relative;
     bottom: 1.25vh;
     left: 0.5vw;
+    line-height: 2.2rem;
 }
 
 .showslist{
@@ -271,10 +274,17 @@ body{
 .wlinfo h4{
     margin-block: 1%;
     font-size: 1.4rem;
+    color: white;
+    width: fit-content;
+}
+.wlinfo h4:active{
+    position: relative;
+    top: 0.3vh;
 }
 .wlinfo p{
     height: 45%;
     overflow: hidden;
+    color: #bcbcbc;
 }
 .wlbtns{
     display: flex;
@@ -292,6 +302,8 @@ body{
 }
 #delbtn{
     border: none;
+    position: relative;
+    top: 1.4vh;
     /* border: 1px solid cyan; */
     margin-left: auto;
     background-color: transparent;
@@ -549,6 +561,7 @@ body{
         margin-top: auto;
         margin-bottom: 0%;
         margin-right: 2%;
+        top: 1.55vh;
     }
     #ratingmodal{
         left: 5%;
@@ -591,5 +604,8 @@ body{
         position: absolute;
         top: 20vh;
         left: 35vw;
+    }
+    .sbButton:hover span{
+        animation: none
     }
 }

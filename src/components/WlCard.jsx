@@ -19,9 +19,9 @@ export default function WlCard({ movie, dtwl }) {
 
     return (
         <div className="wlcard">
-            <img src={movie.Poster} alt={movie.Title + " Poster"} id='wlposter' />
+            <img src={movie.Poster} alt={movie.Title + " Poster"} id='wlposter'/>
             <div className="wlinfo">
-                <h4>{movie.Title}</h4>
+                <Link to={`details/${movie.Title}`}><h4>{movie.Title}</h4></Link>
                 <p>{movie.Plot}</p>
                 <div className='wlbtns'>
                 <div className='wlbtn'><DetailsButton2 text="Add to Completed List" func={() => {if(incl){delfromCL(movie);setincl(false)}else{addtoCl(movie);setincl(true)}}} disabled={incl}/></div>

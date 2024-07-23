@@ -12,7 +12,7 @@ export default function Details() {
 
     const title = useParams().title
     const enctitle = encodeURIComponent(title)
-    const url = `http://www.omdbapi.com/?t=${enctitle}&plot=full&apikey=553957c`
+    const url = `https://www.omdbapi.com/?t=${enctitle}&plot=full&apikey=553957c`
 
     const [movie, setMovie] = useState({Title: "", Plot: "", Poster: ""})
 

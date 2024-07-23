@@ -23,7 +23,7 @@ export default function SearchTab() {
         setMoviesList("")
         return;
       }
-      let url = `http://www.omdbapi.com/?s=${searched.value}&apikey=553957c`
+      let url = `https://www.omdbapi.com/?s=${searched.value}&apikey=553957c`
       setMoviesList(<h1>Searching...</h1>)
       let searchList = (await (await fetch(url)).json()).Search
       if(!searchList) {

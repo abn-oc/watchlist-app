@@ -8,7 +8,6 @@ export default function CardButton({text}) {
         else {
             t = e.target
         }
-        console.log(t)
         t.classList.add("addedanim")
         setTimeout(() => {
             t.classList.remove("addedanim")

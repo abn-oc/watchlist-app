@@ -27,7 +27,6 @@ export function setCl(x) {
 }
 
 export function addtoWl(movie) {
-    console.log(movie)
     let watchlist = getWl()
     let newWl;
     if(watchlist !== null) newWl = [...watchlist, movie]
@@ -36,7 +35,6 @@ export function addtoWl(movie) {
 }
 
 export function addtoCl(movie) {
-    console.log(movie)
     let completedlist = getCl()
     let newCl;    
     if(completedlist !== null) newCl = [...completedlist, movie]

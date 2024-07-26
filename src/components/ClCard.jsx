@@ -28,7 +28,7 @@ export default function ClCard({ movie, dtcl, sm }) {
                 <p>{movie.Plot}</p>
                 <div className='wlbtns'>
                 <div className='wlbtn'><DetailsButton3 text={rtext} func={() => {modalOpen();sm(movie)}}/></div>
-                <Link className='wlbtn' to={`details/${movie.Title}`}><DetailsButton4/></Link>
+                <Link className='wlbtn' to={`details/${movie.imdbID}`}><DetailsButton4/></Link>
                 <button id='delbtn'><MdDelete size={41} onClick={() => {dtcl(movie);delfromCL(movie)}}/></button>
                 </div>
             </div>

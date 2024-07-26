@@ -10,7 +10,7 @@ import Details from './components/Details'
 
 function App() {
 
-  //functions and event listener for responsiveness
+  //functions for responsiveness
   function opensidebar() {
     document.getElementById("sbbg").style.display = "block"
     document.getElementById("sidebar").style.left = "0%"
@@ -19,11 +19,6 @@ function App() {
     document.getElementById("sbbg").style.display = "none"
     document.getElementById("sidebar").style.left = "-100%"
   }
-  // window.addEventListener('resize', () => {
-  //   if(window.innerWidth > 500 && document.getElementById("sidebar").style.left == "0%") {
-  //     document.getElementById("sbbg").style.display = "none"
-  //   }
-  // })
 
   return (
     <>
@@ -40,8 +35,8 @@ function App() {
         <Route path='/search/:value' element={<SearchTab/>}></Route>
         <Route path='/my-watchlist' element={<WatchListTab/>} />
         <Route path='/my-completedlist' element={<CompletedListTab/>} />
-        <Route path='/:a/:b/details/:title' element={<Details/>}></Route>
-        <Route path='/:a/details/:title' element={<Details/>}></Route>
+        <Route path='/:a/:b/details/:id' element={<Details/>}></Route>
+        <Route path='/:a/details/:id' element={<Details/>}></Route>
       </Routes>
     </>
   )

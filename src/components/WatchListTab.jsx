@@ -10,7 +10,6 @@ export default function WatchListTab() {
     let wl = getWl();
     if(wl !== null) {
       setWatchlist(wl)
-      console.log(wl)
     }
   }, []);
 

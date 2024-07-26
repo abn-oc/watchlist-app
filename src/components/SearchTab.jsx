@@ -11,7 +11,6 @@ export default function SearchTab() {
   const navigate = useNavigate()
 
   const searched = useParams()
-  console.log(searched)
 
   function search() {
     navigate(`/search/${value}`)
@@ -32,7 +31,7 @@ export default function SearchTab() {
           return null
         }
         setMoviesList(searchList.map(movie => 
-          <Link className="result" key={movie.imdbID} to={`details/${movie.Title}`}><MediaCard movie={movie} /></Link>
+          <Link className="result" key={movie.imdbID} to={`details/${movie.imdbID}`}><MediaCard movie={movie} /></Link>
         ))
     })()
   }, [searched])

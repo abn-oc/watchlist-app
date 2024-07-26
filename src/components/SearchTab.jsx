@@ -23,7 +23,8 @@ export default function SearchTab() {
         setMoviesList("")
         return;
       }
-      let url = `https://www.omdbapi.com/?s=${searched.value}&apikey=553957c`
+      const apikey = import.meta.env.VITE_APIKEY;
+      let url = `https://www.omdbapi.com/?s=${searched.value}&apikey=${apikey}`
       setMoviesList(<div id="sloader"><MoonLoader color="white"/></div>)
       let searchList = (await (await fetch(url)).json()).Search
       if(!searchList) {

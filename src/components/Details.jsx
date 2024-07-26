@@ -10,10 +10,10 @@ import {getWl, addtoWl, getCl, addtoCl, delfromWL, delfromCL} from './functions'
 
 export default function Details() {
 
-
+    const apikey = import.meta.env.VITE_APIKEY;
     const mid = useParams().id
     const encid = encodeURIComponent(mid)
-    const url = `https://www.omdbapi.com/?i=${encid}&plot=full&apikey=553957c`
+    const url = `https://www.omdbapi.com/?i=${encid}&plot=full&apikey=${apikey}`
 
     const [movie, setMovie] = useState({Title: "", Plot: "", Poster: ""})
 
